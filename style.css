@@ -1,0 +1,122 @@
+* {
+padding:0;
+margin:0;
+vertical-align:baseline;
+list-style:none;
+border:0
+}
+
+body {
+    background-size: 100% 100%;
+    font-family: 'Arial', sans-serif;
+    background-image: linear-gradient(to bottom,#010510,#00012F, #0D002E,#7418E9,#614E6E  );
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nome {
+    font-size: 2em;
+    font-weight: bold;
+}
+.cargo {
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: #CCCCCC;
+    opacity: 0.8;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+.menu-list li {
+    margin: 3px;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: heavy;
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+.sobre-container {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.sobre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.sobre-texto h2 {
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+.minha-foto {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    width: 300px;
+    height: auto;
+    margin-right: 80px;
+}
+
+.tecnologias {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 50px;
+}
+
+.tecnologias img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.sobre-texto {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin-left: 20px;
+}
+
+.tecnologias img:hover {
+    scale: 1.2;
+    transition: transform 0.3s ease;
+}
