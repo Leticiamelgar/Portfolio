@@ -6,7 +6,7 @@ list-style:none;
 border:0
 }
 
-body {
+body, html {
     background-size: 100% 100%;
     font-family: 'Arial', sans-serif;
     background-image: linear-gradient(to bottom,#010510,#00012F, #0D002E,#7418E9,#614E6E  );
@@ -20,6 +20,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .nome {
@@ -47,27 +48,30 @@ nav {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
     list-style-type: none;
     margin: 0;
     padding: 0;
     text-decoration: none;
+    gap: 10px;
 }
 .menu-list li {
     margin: 3px;
+    justify-content: flex-end;
+    min-width: 100px;
+    
 }
 
 .menu-list li a {
     text-decoration: none;
     color: #FFFFFF;
-    font-weight: heavy;
+    font-weight: 700;
     padding: 10px 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 
-.sobre-container {
+#sobre {
     flex-direction: column;
     display: flex;
     align-items: center;
@@ -75,7 +79,7 @@ nav {
     min-height: 100vh;
 }
 
-.sobre {
+.sobre-div {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -90,7 +94,8 @@ nav {
 
 .minha-foto {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    width: 300px;
+    width: 250px;
+    max-width: 100%;
     height: auto;
     margin-right: 80px;
 }
@@ -100,13 +105,18 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
     margin-top: 50px;
+
 }
 
 .tecnologias img {
     width: 50px;
-    height: 50px;
+    max-width: 100%;
+    height: auto;
     margin-right: 20px;
+    transition: transform 0.3s ease;
 }
 
 .sobre-texto {
@@ -114,9 +124,49 @@ nav {
     flex-direction: column;
     max-width: 600px;
     margin-left: 20px;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.texto-descricao {
+    width: calc(100% - 10px);
+    text-align: justify;
 }
 
 .tecnologias img:hover {
-    scale: 1.2;
-    transition: transform 0.3s ease;
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    #sobre {
+        justify-content: flex-start;
+    }
+    .sobre-div, .sobre {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .minha-foto {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 50%;
+    }
+    .sobre-texto {
+        margin-left: 0;
+        padding: 0 16px;
+        max-width: 100%;
+        width: 100%;
+    }
+    .tecnologias {
+        justify-content: center;
+        gap: 12px;
+        padding: 0 16px;
+    }
+    .tecnologias img {
+        width: 44px;
+        margin-right: 0;
+    }
+    .menu-list {
+        flex-direction: column;
+    }
 }
