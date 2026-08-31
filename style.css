@@ -162,6 +162,11 @@ nav {
     margin: 0 auto;
     align-items: center;
     box-sizing: border-box;
+    justify-content: center;
+}
+
+.projetos{
+    display: flex;
 }
 
 .carrossel{
@@ -187,7 +192,8 @@ nav {
 #projetos h2{
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    font-size: 30px;
 }
 
 .projeto{ /* div de cada projeto */
@@ -294,6 +300,57 @@ nav {
     background-color: white;
 }
 
+/*Contato*/
+#contato{
+    display: flex;
+    width: 100%;
+    min-height: 300px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.redes-socias{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    
+}
+
+#contato a img{
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+    
+}
+
+.icones-contatos{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 500px;
+    gap: 5px;
+}
+
+#email{
+    display: flex;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: small;
+    font-weight: 80;
+    align-items: center;
+}
+
+#email img {
+    align-items: center;
+    color: #FFFFFF;
+    margin-right: 5px;
+    filter: invert();
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     #sobre {
         justify-content: flex-start;
@@ -347,6 +404,11 @@ nav {
     .carrossel{
         align-items: flex-start;
         height: 300px;
+    }
+
+    #contato{
+        min-height: 200px;
+        max-height: 250px;
     }
 
     /* Novo cálculo: Imagem (300px) */
