@@ -6,6 +6,9 @@ list-style:none;
 border:0;
 }
 
+html{
+    scroll-behavior: smooth;
+}
 
 body, html {
     min-height: 100vh;
@@ -73,10 +76,11 @@ nav {
     font-weight: 700;
     padding: 10px 10px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: 3s ease ;
 }
 
 
+/* Seção de sobre */
 #sobre {
     flex-direction: column;
     display: flex;
@@ -124,6 +128,7 @@ nav {
     height: auto;
     margin-right: 20px;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .sobre-texto {
@@ -143,6 +148,10 @@ nav {
 .tecnologias img:hover {
     transform: scale(1.2);
 }
+
+/*fim da sessão de sobre */
+
+/* Início da sessão de projetos*/
 
 #projetos {
     display: flex;
@@ -171,19 +180,30 @@ nav {
    flex-direction: row;
    align-items: center;
    justify-content: center;
-   gap: 30px;
    transition: transform 0.5s ease-in-out;
 }
 
-.carrossel input {
-    display: none;
-}
 
 #projetos h2{
     text-align: center;
     margin-top: 10px;
     margin-bottom: 20px;
 }
+
+.projeto{ /* div de cada projeto */
+    width: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carrossel-projetos .projeto:not(:nth-child(3), :last-child) {
+    margin-right: 30px;
+}
+
+/* Estilização das imagens */
+
 
 .projeto img{
     width: 300px;
@@ -192,16 +212,19 @@ nav {
     object-position: top;
     border-radius: 10px;
     object-fit: cover;
+    margin-bottom: 40px;
     
 }
 
+.imagem-efeito{
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    filter: blur(2px);
+    transition: transform 0.3s ease;
+}
 
-.projeto{
-    width: 300px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Posicionamento e estilização dos inputs*/
+.carrossel input {
+    display: none;
 }
 
 .manual-navigation{
@@ -227,14 +250,48 @@ nav {
     background-color: #FFFFFF;
 }
 
+/* Deslocamento da div carrossel-projetos */
+
 #radio1:checked ~ .carrossel-projetos{
     transform: translateX(330px);
+    transition: transform 0.4s ease;
 }
 #radio2:checked ~ .carrossel-projetos{
     transform: translateX(0);
 }
 #radio3:checked ~ .carrossel-projetos{
     transform: translateX(-330px);
+}
+
+/* Efeito de imagem é removido quando está selecionada */
+
+#radio1:checked ~.carrossel-projetos .projeto:nth-child(1) .imagem-efeito{
+    transform: scale(1.08);
+    box-shadow: none;
+    filter: none;
+}
+
+#radio2:checked ~.carrossel-projetos .projeto:nth-child(2) .imagem-efeito{
+    transform: scale(1.08);
+    box-shadow: none;
+    filter: none;
+}
+
+#radio3:checked ~.carrossel-projetos .projeto:nth-child(3) .imagem-efeito{
+    transform: scale(1.08);
+    box-shadow: none;
+    filter: none;
+}
+
+/* Lógica para quando o input estar marcado a bolinha ficar branca */
+#radio1:checked ~ .manual-navigation label[for="radio1"] {
+    background-color: white;
+}
+#radio2:checked ~ .manual-navigation label[for="radio2"] {
+    background-color: white;
+}
+#radio3:checked ~ .manual-navigation label[for="radio3"] {
+    background-color: white;
 }
 
 @media (max-width: 768px) {
@@ -284,7 +341,7 @@ nav {
     .projeto img {
         width: 300px;
         height: 150px;   
-        margin-bottom: 10px;
+        
     }
 
     .carrossel{
@@ -292,11 +349,7 @@ nav {
         height: 300px;
     }
 
-    .carrossel-projetos {
-        gap: 15px; /* Diminuindo o espaço no mobile */
-    }
-
-    /* Novo cálculo: Imagem (300px) + Gap (15px) = 315px */
+    /* Novo cálculo: Imagem (300px) */
     #radio1:checked ~ .carrossel-projetos {
         transform: translateX(315px);
     }
