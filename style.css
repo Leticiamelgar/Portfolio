@@ -19,9 +19,6 @@ body, html {
     
 }
 
-body {
-    padding: 10px;
-}
 
 .cabecalho{
     display: flex;
@@ -42,7 +39,10 @@ body {
     opacity: 0.8;
 }
 
-
+.titulo{
+    margin-left: 20px;
+    margin-top: 10px;
+}
 
 nav {
     display: flex;
@@ -87,13 +87,15 @@ nav {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
 .sobre-div {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
 }
 
@@ -107,7 +109,6 @@ nav {
     width: 250px;
     max-width: 100%;
     height: auto;
-    margin-right: 80px;
 }
 
 .tecnologias {
@@ -364,7 +365,7 @@ nav {
     }
     .minha-foto {
         margin-right: 0;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         width: 50%;
     }
     .sobre-texto {
@@ -387,7 +388,7 @@ nav {
     }
 
     #projetos{
-        min-height: 400px;
+        min-height: 600px;
     }
 
     .projeto{
@@ -422,9 +423,17 @@ nav {
 }
 
 
-@media (max-width: 1024px) {
+@media (min-width:800px) and (max-width: 1024px) {
   .minha-foto {
     width: 200px;
-    margin-right: 40px;
+  }
+  #projetos {
+    min-height: 700px;
+  }
+  #sobre {
+    min-height: 800px;
+  }
+  #contato {
+    min-height: 200px;
   }
 }
